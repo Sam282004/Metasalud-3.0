@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
+    <title>Agregar Usuario</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .header {
+            background-color: #2196F3;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nav a img {
+            height: 100px;
+            margin-top: 25px;
+            margin-left: 45px;
+            margin-bottom: 25px;
+            border-radius: 45px;
+            background-color: white;
+        }
+        
+        .ul-menu {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            display: flex;
+        }
+        
+        .ul-menu li {
+            margin: auto;
+            list-style: none;
+            font-size: 22px;
+            transition: all 0.25s;
+        }
+        
+        .ul-menu li a {
+            background-color: #369BF5;
+            color: white;
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+        }
+        
+        .ul-menu li a:hover {
+            border: solid 1px white;
+            background-color: white;
+            color: black;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .ul-menu li:hover {
+            transform: translateY(-15px);
+        }
+        /*footer*/
+        /*footer*/
+        
+        footer {
+            width: 100%;
+            background-size: cover;
+            color: white !important;
+            background-color: #2196F3;
+        }
+        
+        .container__footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1500px;
+            margin: auto;
+        }
+        
+        .box__footer {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .box__footer .logo img {
+            border-radius: 45px;
+            width: 250px;
+        }
+        
+        .box__footer .terms {
+            max-width: 350px;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .box__footer h2 {
+            margin-bottom: 30px;
+            border-bottom: 1px solid white;
+            font-weight: 700;
+        }
+        
+        .box__footer a {
+            display: flex;
+            margin-top: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .box__footer a:hover {
+            opacity: 0.8;
+        }
+        
+        .box__footer a .fab {
+            font-size: 20px;
+        }
+        
+        .box__copyright {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 0px 40px;
+        }
+        
+        .box__copyright p {
+            margin-top: 20px;
+        }
+        
+        .box__copyright hr {
+            width: 100%;
+            height: 1px;
+        }
+        
+        ion-icon {
+            margin-right: 3px;
+            font-size: 34px;
+        }
+        
+        .wave-main2 {
+            padding-top: 184px;
+            overflow: hidden;
+            padding-bottom: 0%;
+            height: 300px;
+        }
+        
+        .wave-2 {
+            width: 300%;
+            padding-top: 180px;
+            background-image: url(/img/wave2.png);
+            animation: o 7s linear infinite;
+        }
+        
+        @keyframes a {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: 1396px;
+            }
+        }
+        
+        .wave-main {
+            overflow: hidden;
+        }
+        
+        .wave-1 {
+            width: 300%;
+            height: 100%;
+            padding-top: 120px;
+            background-position: bottom;
+            background-image: url(/img/wave.png);
+            animation: o 7s linear infinite;
+        }
+        
+        @keyframes o {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: -1396px;
+            }
+        }
+        /*form*/
+        
+        .border-form {
+            margin-left: 13%;
+            display: inline-block;
+        }
+        
+        form {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 25px;
+        }
+        
+        form h1 {
+            font-size: 40px;
+            font-weight: 900;
+        }
+        
+        .border-form form {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        
+        .border-form form input {
+            width: 431px;
+            display: block;
+            height: 48px;
+            margin: 0px 0px 10px 0px;
+        }
+        
+        .border-form form label {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .form-button {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .form-button button {
+            background-color: #2196F3;
+            padding: 10px;
+            width: 200px;
+            border-radius: 45px;
+            border: none;
+            font-size: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        .form-button button:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+        
+        .border-form form hr {
+            color: black;
+        }
+        
+        .main {
+            display: flex;
+            padding-top: 13rem;
+        }
+        /*form*/
+        /*layer*/
+        
+        .layer-text {
+            width: 30%;
+            margin-left: 28rem;
+            margin-top: 5rem;
+            height: 100%;
+            padding: 15px 15px 30px 30px;
+        }
+        
+        .layer-text img {
+            margin-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .layer-text ul li,
+        p {
+            font-size: 19px;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        .layer-button {
+            display: flex;
+            background-color: #F3F4F6;
+            justify-content: space-evenly;
+            width: 400px;
+            text-align: center;
+            margin-left: 3.5rem;
+            margin-top: 2rem;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        
+        .layer-button a {
+            margin: 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .layer-button a:hover {
+            font-weight: 700;
+        }
+        
+        .layer-button p {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: 15px;
+            padding: 10px;
+            background-color: #0086E5;
+            color: #f2f5f866;
+        }
+        
+        .layer-button p:hover {
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--navbar-->
+    <header class="header">
+        <nav class="nav" id="nav-menu">
+            <a href="#"><img src="/img/logo.png" alt="#"></a>
+            <ul class="ul-menu">
+                <li><a href="/src/views/index.ejs">Inicio</a></li>
+                <li><a href="/src/views/pages/contacto.html">Vacunacion</a></li>
+                <li><a href="/src/views/pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!--navbar-->
+
+    <!--formulario-->
+
+    <div class="main">
+        <div class="layer-text">
+            <img src="/img/carnet.png" alt="">
+            <h1 style="line-height: 1; margin-bottom: 1rem;">Te damos la bienvenida a Carnet de Vacunación</h1>
+            <p>Para poder acceder a tu carnet:</p>
+            <ul>
+                <li>Rellenar los datos del formulario</li>
+                <li>Ten a la mano tu DNI</li>
+                <li>Ver el detalle de tu esquema de vacunación.</li>
+                <li>Descargar tu certificado de vacunación.</li>
+                <li>Solicitar el registro de tu vacunación Covid-19.</li>
+            </ul>
+            <div class="layer-button">
+                <a href="#">Verificar un <br>Codigo QR</a>
+                <div>
+                    <p>LECTOR QR</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="border-form">
+            <form action="/add" method="POST">
+                <h1 style="color:#2196F3;">INSERTAR USUARIO</h1>
+                <hr>
+                <br>
+                <label for="name">Ingrese Nombre</label>
+                <input type="text" name="name">
+                <label for="lastname">Ingrese Apellido</label>
+                <input type="text" name="lastname">
+                <label for="dni">Numero de Documento</label>
+                <input type="text" name="dni">
+                <label for="fEmision">Fecha de emision de tu DNI</label>
+                <input type="date" name="fEmision">
+                <label for="fNacimiento">Fecha de Nacimiento</label>
+                <input type="date" name="fNacimiento">
+                <br>
+                <div class="form-button">
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!--formulario-->
+    <!--footer-->
+    <div class="wave-main2">
+        <img class="wave-2" alt="">
+    </div>
+    <footer>
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="/img/logo.png" alt=" ">
+                </div>
+                <div class="terms ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente
+                        deserunt.
+                    </p>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Soluciones</h2>
+
+                <a href="# ">Vacunacion</a>
+                <a href="# ">Sobre Nosotros</a>
+                <a href="# ">Soporte</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="# ">Acerca de</a>
+                <a href="# ">Trabajos</a>
+                <a href="# ">Procesos</a>
+                <a href="# ">Servicios</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+
+                <a href="# ">
+                    <ion-icon name="logo-facebook "></ion-icon>Facebook</a>
+                <a href="# ">
+                    <ion-icon name="logo-twitter "></ion-icon>Twitter</a>
+                <a href="# ">
+                    <ion-icon name="logo-linkedin "></ion-icon>Linkedin</a>
+                <a href="# ">
+                    <ion-icon name="logo-instagram "></ion-icon>
+                    </i>Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
+        </div>
+    </footer>
+    <!--footer-->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
