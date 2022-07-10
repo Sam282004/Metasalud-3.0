@@ -17,8 +17,7 @@ controller.save = (req, res) => {
     const data = req.body;
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO user set ?', [data], (err, user) => {
-            console.log(user);
-            res.send('works');
+            res.render("consulta")
         });
 
     });

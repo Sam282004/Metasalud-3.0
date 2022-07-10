@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+    body {
+        width: 100%;
+        margin: 0, auto;
+        max-width: 2000px;
+    }
+    
+    a {
+        text-decoration: none !important;
+    }
+    
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    
+    .zzzzz {
+        padding-top: 14rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .titulo {
+        display: inline-block;
+    }
+    
+    .titulo h1 {
+        text-align: center;
+        font-size: 65px;
+        font-weight: 700;
+        color: #FEBA0B;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .titulo hr {
+        width: 70%;
+        margin-left: 20rem;
+    }
+    
+    u {
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        justify-content: center;
+        font-size: xx-large;
+        color: #000000;
+        font-weight: bold;
+        padding-top: 150px;
+    }
+    /*NAV*/
+    
+    .header {
+        background-color: #2196F3;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.5s ease;
+    }
+    
+    .nav a img {
+        height: 100px;
+        margin-top: 20px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        border-radius: 45px;
+        background-color: white;
+    }
+    
+    .ul-menu {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        display: flex;
+    }
+    
+    .ul-menu li {
+        margin: auto;
+        list-style: none;
+        font-size: 22px;
+        transition: all 0.25s;
+    }
+    
+    .ul-menu li a {
+        background-color: #369BF5;
+        color: white;
+        padding: 17px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+        transition: all 0.8s ease;
+    }
+    
+    .nav.active .ul-menu li a {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 17px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+        border: solid 1px rgb(0, 0, 0);
+    }
+    
+    .ul-menu li a:hover {
+        border: solid 1px white;
+        background-color: white;
+        color: black;
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+    }
+    
+    .nav.active .ul-menu li a:hover {
+        border: solid 1px rgb(0, 0, 0);
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+    }
+    
+    .nav.active {
+        background: #ffffff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    
+    .ul-menu li:hover {
+        transform: translateY(-15px);
+    }
+    /*GRID*/
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+        padding-top: 15rem;
+        margin-bottom: 5rem;
+    }
+    
+    .grid .photos {
+        display: flex;
+        height: 365px;
+        width: 80%;
+        justify-content: center;
+        margin-left: 10rem;
+    }
+    
+    .grid img {
+        width: 650px;
+        max-width: 100%;
+    }
+    /*NESTED_GRID*/
+    
+    .nested-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 10rem;
+        margin-bottom: 4rem;
+        border: 1px solid rgb(37, 37, 37);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .nested-grid c {
+        margin-left: 18px;
+        font-size: 35px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .nested-grid d {
+        background: #ecf0f1;
+        padding: 1em;
+        padding-left: 50px;
+    }
+    /*footer*/
+    
+    footer {
+        width: 100%;
+        background-size: cover;
+        color: white !important;
+        background-color: #2196F3;
+    }
+    
+    .container__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1500px;
+        margin: auto;
+    }
+    
+    .box__footer {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+    
+    .box__footer .logo img {
+        border-radius: 45px;
+        width: 250px;
+    }
+    
+    .box__footer .terms {
+        max-width: 350px;
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    
+    .box__footer h2 {
+        margin-bottom: 30px;
+        border-bottom: 1px solid white;
+        font-weight: 700;
+    }
+    
+    .box__footer a {
+        display: flex;
+        margin-top: 10px;
+        font-weight: 600;
+        color: white;
+    }
+    
+    .box__footer a:hover {
+        opacity: 0.8;
+    }
+    
+    .box__footer a .fab {
+        font-size: 20px;
+    }
+    
+    .box__copyright {
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+        padding: 0px 20px;
+    }
+    
+    .box__copyright p {
+        margin-top: 30px;
+    }
+    
+    .box__copyright hr {
+        width: 100%;
+        height: 1px;
+    }
+    
+    ion-icon {
+        margin-right: 3px;
+        font-size: 34px;
+    }
+    
+    .wave-main2 {
+        padding-top: 184px;
+        overflow: hidden;
+        padding-bottom: 0%;
+        height: 300px;
+    }
+    
+    .wave-2 {
+        width: 300%;
+        padding-top: 180px;
+        background-image: url(/img/wave2.png);
+        animation: o 7s linear infinite;
+    }
+    
+    @keyframes a {
+        0% {
+            margin-left: 0;
+        }
+        100% {
+            margin-left: 1396px;
+        }
+    }
+    
+    @media screen and (max-width: 800px) {
+        .body {
+            width: 100%;
+        }
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1em;
+        }
+        .grid img {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: 5px;
+        }
+        /*NESTED-GRID*/
+        .nested-grid {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0em;
+        }
+        .nested-grid c {
+            font-size: 100%;
+            padding-left: 20px;
+        }
+        .nested-grid d {
+            font-size: 100%;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    
+    .tmr {
+        background-color: #2196F3;
+        color: white;
+        padding: 10px;
+    }
+</style>
+
+<header class="header">
+    <nav class="nav" id="nav-menu">
+        <a href="#"><img src="/img/logo.png" alt="#"></a>
+        <ul class="ul-menu">
+            <li><a class="colors" href="#">Inicio</a></li>
+            <li><a class="colors" href="/src/views/pages/contacto.html">Vacunacion</a></li>
+            <li><a class="colors" href="/src/views/pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+            <li><a class="colors" href="#">Soporte</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+
+
+    <div class="grid">
+        <div class="nested-grid">
+
+            <div class="tmr">
+                <c>¿Por que MetaSalud?</c>
+            </div>
+
+            <hr>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+
+            <div class="tmr">
+                <c>¿Que somos?</c>
+            </div>
+            <hr>
+            <d>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero provident placeat, veniam perferendis culpa porro quis doloremque illo dignissimos unde, quo repellat vel reprehenderit recusandae rem blanditiis harum, nostrum corrupti.
+            </d>
+        </div>
+        <div class="photos">
+            <img src="/img/vacuna1.png" alt="Covid">
+        </div>
+        <div class="nested-grid">
+
+            <div class="tmr">
+                <c>¿Que ofrecemos?</c>
+            </div>
+            <hr>
+            <d>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, modi quasi nobis non magnam pariatur illo voluptatem reprehenderit quo vel? In voluptatibus eveniet saepe. Nemo doloribus ratione aliquid perferendis saepe.</d>
+
+            <div class="tmr">
+                <c>¿Por que lo hacemos?</c>
+            </div>
+            <hr>
+            <d>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat consectetur quis aliquid voluptatem cum reiciendis a voluptatibus. Quas, enim. Quis nihil, in sint aspernatur explicabo sunt enim rerum amet voluptatum.</d>
+        </div>
+        <div class="photos">
+            <img src="/img/vacuna1.png" alt="Covid">
+        </div>
+    </div>
+
+    <footer>
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="/img/logo.png" alt=" ">
+                </div>
+                <div class="terms ">
+                    <n>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente
+                        deserunt.
+                    </n>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Soluciones</h2>
+
+                <a href="# ">Vacunacion</a>
+                <a href="# ">Sobre Nosotros</a>
+                <a href="# ">Soporte</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="# ">Acerca de</a>
+                <a href="# ">Trabajos</a>
+                <a href="# ">Procesos</a>
+                <a href="# ">Servicios</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+
+                <a href="# ">
+                    <ion-icon name="logo-facebook "></ion-icon>Facebook</a>
+                <a href="# ">
+                    <ion-icon name="logo-twitter "></ion-icon>Twitter</a>
+                <a href="# ">
+                    <ion-icon name="logo-linkedin "></ion-icon>Linkedin</a>
+                <a href="# ">
+                    <ion-icon name="logo-instagram "></ion-icon>
+                    </i>Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+
+        const os = document.querySelector('.header');
+
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('active', window.scrollY > 0)
+            os.classList.toggle('activite', window.scrollY > 0)
+
+        })
+    </script>
+</body>
+
+
+
+</html>
+
+</html>

@@ -30,7 +30,19 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use('/', usuarios);
+app.get('/usuarios', (req, res) => {
+    res.render("usuarios")
+})
+app.get('/consulta', (req, res) => {
+    res.render("consulta");
+})
+app.get('/index', (req, res) => {
+    res.render("index");
+})
+app.get('/sobre-nosotros', (req, res) => {
 
+    res.render("sobre-nosotros");
+})
 
 //static files
 app.use(express.static(path.join(__dirname, 'public')));

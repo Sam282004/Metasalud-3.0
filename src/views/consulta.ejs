@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Consulta de Dosis</title>
     <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
-    <title>Agregar Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
@@ -25,7 +29,6 @@
         
         .header {
             background-color: #2196F3;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             width: 100%;
             position: fixed;
             z-index: 2;
@@ -34,7 +37,6 @@
         .nav {
             display: flex;
             justify-content: space-between;
-            transition: all 0.5s ease;
         }
         
         .nav a img {
@@ -65,16 +67,6 @@
             padding: 17px;
             border-radius: 30px;
             margin: 0px 10px 0px 10px;
-            transition: all 0.8s ease;
-        }
-        
-        .nav.active .ul-menu li a {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            padding: 17px;
-            border-radius: 30px;
-            margin: 0px 10px 0px 10px;
-            border: solid 1px rgb(0, 0, 0);
         }
         
         .ul-menu li a:hover {
@@ -84,22 +76,9 @@
             box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
         }
         
-        .nav.active .ul-menu li a:hover {
-            border: solid 1px rgb(0, 0, 0);
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
-        }
-        
-        .nav.active {
-            background: #ffffff;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-        }
-        
         .ul-menu li:hover {
             transform: translateY(-15px);
         }
-        /*footer*/
         /*footer*/
         
         footer {
@@ -191,19 +170,6 @@
             animation: o 7s linear infinite;
         }
         
-        @keyframes a {
-            0% {
-                margin-left: 0;
-            }
-            100% {
-                margin-left: 1396px;
-            }
-        }
-        
-        .wave-main {
-            overflow: hidden;
-        }
-        
         .wave-1 {
             width: 300%;
             height: 100%;
@@ -221,70 +187,6 @@
                 margin-left: -1396px;
             }
         }
-        /*form*/
-        
-        .border-form {
-            margin-left: 1%;
-            display: inline-block;
-        }
-        
-        form {
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            border-radius: 25px;
-        }
-        
-        form h1 {
-            font-size: 40px;
-            font-weight: 900;
-        }
-        
-        .border-form form {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        }
-        
-        .border-form form input {
-            width: 431px;
-            display: block;
-            height: 48px;
-            margin: 0px 0px 10px 0px;
-        }
-        
-        .border-form form label {
-            font-size: 20px;
-            font-weight: 500;
-        }
-        
-        .form-button {
-            padding: 10px;
-            text-align: center;
-        }
-        
-        .form-button button {
-            background-color: #2196F3;
-            padding: 10px;
-            width: 200px;
-            border-radius: 45px;
-            border: none;
-            font-size: 25px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
-        
-        .form-button button:hover {
-            opacity: 0.9;
-            cursor: pointer;
-        }
-        
-        .border-form form hr {
-            color: black;
-        }
-        
-        .main {
-            display: flex;
-            padding-top: 13rem;
-        }
         
         .BRR {
             text-align: end;
@@ -300,13 +202,74 @@
         .TUNOMETECABRA:hover {
             opacity: 0.9;
         }
-        /*form*/
-        /*layer*/
+        /*formulario*/
+        
+        .contenedor {
+            padding-top: 18rem;
+            display: flex;
+        }
+        
+        .contenedor-main {
+            display: flex;
+            justify-content: space-around;
+            padding: 35px;
+        }
+        
+        .contenedor-main h1 {
+            color: #2196F3;
+            font-size: 35px;
+            font-weight: 800;
+        }
+        
+        .contenedor-main form {
+            margin: 10px;
+            padding: 20px;
+            box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+            border-radius: 25px;
+            height: 500px;
+        }
+        
+        .contenedor-sub {
+            margin-left: 25rem;
+        }
+        
+        .contenedor-sub form li,
+        label {
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 15px 0px 0px 0px;
+        }
+        
+        .contenedor-sub form input {
+            width: 445px;
+            height: 48px;
+        }
+        
+        .contenedor-sub form button {
+            padding: 10px;
+            width: 230px;
+            background-color: #2196F3;
+            border: none;
+            font-weight: 700;
+            font-size: 27px;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        .contenedor-sub form button:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+        
+        .contenedor-button {
+            padding: 10px;
+            text-align: left;
+        }
         
         .layer-text {
             width: 30%;
-            margin-left: 28rem;
-            margin-top: 5rem;
+            margin-left: 13rem;
             height: 100%;
             padding: 15px 15px 30px 30px;
         }
@@ -362,8 +325,8 @@
 </head>
 
 <body>
-    <!--navbar-->
     <header class="header">
+
         <nav class="nav" id="nav-menu">
             <a href="/index"><img src="/img/logo.png" alt="#"></a>
             <ul class="ul-menu">
@@ -371,15 +334,40 @@
                 <li><a href="/usuarios">Ingresar Datos</a></li>
                 <li><a href="/consulta">Consultar</a></li>
                 <li><a href="/nosotros">Nosotros</a></li>
-
             </ul>
         </nav>
     </header>
-    <!--navbar-->
 
-    <!--formulario-->
 
-    <div class="main">
+
+    <div class="contenedor">
+        <div class="contenedor-main">
+            <div class="contenedor-sub">
+                <form action="#" method="post">
+                    <h1>IDENTIFICATE</h1>
+                    <hr>
+                    <br>
+                    <label for="dni">Número de Documento</label>
+                    <input type="text" name="dni" required>
+
+                    <label for="fEmision">Fecha de emisión de tu DNI</label>
+                    <input type="text" name="fEmision" required>
+
+                    <label for="fNacimiento">Fecha de Nacimiento</label>
+                    <input type="text" name="fNacimiento" required>
+                    <div class="BRR">
+                        <a href="/usuarios" class="TUNOMETECABRA">Registrese aqui</a>
+                    </div>
+
+
+                    <div class="contenedor-button">
+                        <button>Consultar</button>
+                    </div>
+            </div>
+
+            </form>
+
+        </div>
         <div class="layer-text">
             <img src="/img/carnet.png" alt="">
             <h1 style="line-height: 1; margin-bottom: 1rem;">Te damos la bienvenida a Carnet de Vacunación</h1>
@@ -397,40 +385,19 @@
                     <p>LECTOR QR</p>
                 </div>
             </div>
-
-        </div>
-        <div class="border-form">
-            <form action="/add" method="POST">
-                <h1 style="color:#2196F3;">INSERTAR USUARIO</h1>
-                <hr>
-                <br>
-                <label for="name">Ingrese Nombre</label>
-                <input type="text" name="name">
-                <label for="lastname">Ingrese Apellido</label>
-                <input type="text" name="lastname">
-                <label for="dni">Numero de Documento</label>
-                <input type="text" name="dni">
-                <label for="fEmision">Fecha de emision de tu DNI</label>
-                <input type="date" name="fEmision">
-                <label for="fNacimiento">Fecha de Nacimiento</label>
-                <input type="date" name="fNacimiento">
-                <div class="BRR">
-                    <a href="/consulta" class="TUNOMETECABRA">Ya se registro?</a>
-                </div>
-
-                <br>
-                <div class="form-button">
-                    <button type="submit">Continuar</button>
-
-                </div>
-            </form>
         </div>
     </div>
 
 
 
-    <!--formulario-->
-    <!--footer-->
+
+
+
+
+
+
+
+
     <div class="wave-main2">
         <img class="wave-2" alt="">
     </div>
@@ -483,18 +450,6 @@
             <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
         </div>
     </footer>
-
-
-    <!--footer-->
-    <script>
-        const nav = document.querySelector('.nav');
-
-        window.addEventListener('scroll', function() {
-            nav.classList.toggle('active', window.scrollY > 0)
-        })
-    </script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

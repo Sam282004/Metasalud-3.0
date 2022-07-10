@@ -37,6 +37,7 @@
         .nav {
             display: flex;
             justify-content: space-between;
+            transition: all 0.5s ease;
         }
         
         .nav a img {
@@ -67,6 +68,16 @@
             padding: 17px;
             border-radius: 30px;
             margin: 0px 10px 0px 10px;
+            transition: all 0.8s ease;
+        }
+        
+        .nav.active .ul-menu li a {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+            border: solid 1px rgb(0, 0, 0);
         }
         
         .ul-menu li a:hover {
@@ -74,6 +85,18 @@
             background-color: white;
             color: black;
             box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active .ul-menu li a:hover {
+            border: solid 1px rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active {
+            background: #ffffff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         }
         
         .ul-menu li:hover {
@@ -177,11 +200,13 @@
         }
         
         .tarjeta {
+            text-align: center;
+            margin: 30px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-            margin: 50px 0px 50px 0px;
+            padding: 50px 0px 50px 0px;
             padding: 15px;
             background-color: white;
-            width: 450px;
+            width: 500px;
             transition: all 0.25s;
             border-radius: 45px;
         }
@@ -219,7 +244,7 @@
         
         .card-main {
             margin-top: 100px;
-            padding: 55px;
+            padding: 35px;
             background-color: #E6E6E6;
             margin-bottom: 100px;
         }
@@ -274,7 +299,7 @@
         }
         
         .cuadro-main {
-            height: 300px;
+            height: 250px;
             margin: 100px 0px 10px 0px;
             display: flex;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -286,7 +311,7 @@
         
         .cuadro-main img {
             height: 150px;
-            margin-left: 22%;
+            margin-left: 10%;
         }
         
         .cuadro-text {
@@ -399,6 +424,10 @@
                 margin-left: 1396px;
             }
         }
+        
+        .centrado-1 {
+            text-align: justify;
+        }
     </style>
 
 </head>
@@ -407,12 +436,12 @@
     <header class="header">
 
         <nav class="nav" id="nav-menu">
-            <a href="#"><img src="/img/logo.png" alt="#"></a>
+            <a href="/index"><img src="/img/logo.png" alt="#"></a>
             <ul class="ul-menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="/src/views/pages/contacto.html">Vacunacion</a></li>
-                <li><a href="/src/views/pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="#">Soporte</a></li>
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/usuarios">Ingresar Datos</a></li>
+                <li><a href="/consulta">Consultar</a></li>
+                <li><a href="/sobre-nosotros">Nosotros</a></li>
             </ul>
         </nav>
     </header>
@@ -422,10 +451,11 @@
         <div class="container-text">
             <h1>BIENVENIDOS A</h1>
             <h1 style="color: #FEBA0B;">METASALUD</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate fugit nisi modi deleniti voluptatum quas obcaecati? Iure, repudiandae? Ducimus non tenetur praesentium amet. Alias eius saepe numquam veritatis, non magni illo sunt quia
-                fugit aspernatur.
+            <p class="centrado-1">Bienvenido a esta amigable pagina web, si estas vacunado contra el Covid-19 la cual fue probada en 70,000 personas hoy en dia, más de 70% de ya se han vacunado. No esperes a que sea tu turno de contraer este virus registrate e ingresar de
+                forma segura y efectiva a revisar tus dosis.
+
             </p>
-            <button class="container-button"><a href="">Ver Más</a></button>
+            <button class="container-button"><a href="/consulta">Consultar</a></button>
         </div>
 
         <div>
@@ -445,11 +475,11 @@
 
             <div class="card-text">
                 <h1 style="color: #FEBA0B;">Sabias Que?</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi vitae veritatis voluptas facere repudiandae, laborum exercitationem dolorem nam distinctio maiores nemo reiciendis deleniti repellendus, culpa qui itaque deserunt ullam.
-                    Omnis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, nisi.
+                <p>Hasta el momento, solamente por COVID-19 han fallecido más personas de las que en 2017 murieron por alguna otra causa, incluyendo cáncer de mama, próstata, Alzheimer o diabetes. Hoy, el nuevo coronavirus Sars-CoV-2 ha superado ampliamente
+                    en mortalidad a estas patologías, siendo la décima causa de muerte y la primera si se considera a la que más fallecimientos al día causa.
                 </p>
                 <div class="card-button">
-                    <a href="~/src/views/usuarios.ejs">
+                    <a href="/usuarios">
                         <button>  Continuar</button>
                     </a>
 
@@ -464,45 +494,43 @@
     <div class="padre-class">
 
         <div class="tarjeta">
-            <img src="/img/vacuna1.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab quae, dignissimos quidem deleniti illum repudiandae quis esse ea praesentium commodi aperiam libero, unde facere consectetur doloribus possimus reiciendis nesciunt.</p>
-            <div style="text-align: center;">
-                <a href=""><button>Continue</button></a>
-            </div>
-        </div>
-        <div class="tarjeta">
-            <img src="/img/vacuna1.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab quae, dignissimos quidem deleniti illum repudiandae quis esse ea praesentium commodi aperiam libero, unde facere consectetur doloribus possimus reiciendis nesciunt.</p>
-            <div style="text-align: center;">
-                <a href=""><button>Continue</button></a>
-            </div>
-        </div>
-        <div class="tarjeta">
-            <img src="/img/vacuna1.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ab quae, dignissimos quidem deleniti illum repudiandae quis esse ea praesentium commodi aperiam libero, unde facere consectetur doloribus possimus reiciendis nesciunt.</p>
+            <img src="/img/jeringa.png" alt="">
+            <p>Las vacunas contra la COVID-19 se usan para preparar el sistema inmune y para proteger contra esta enfermedad. Estas vacunas son una herramienta vital para ayudar a detener la pandemia de COVID-19. Todas las personas de 6 meses y mayores deben
+                recibir una vacuna contra la COVID-19 gratuita.
+            </p>
 
-            <div style="text-align: center;">
-                <a href=""><button>Continue</button></a>
-            </div>
+        </div>
+        <div class="tarjeta">
+            <img src="/img/jeringa2.png" alt="">
+            <p>Niñas y niños de 5 a 11 años que requieran su primera o segunda dosis (21 días después de la primera dosis de la vacuna contra la COVID-19). Adolescentes de 12 a 17 años que requieran su primera, segunda o tercera dosis (5 meses después de
+                la segunda dosis de la vacuna contra la COVID-19).</p>
+
+        </div>
+        <div class="tarjeta">
+            <img src="/img/jeringa3.png" alt="">
+            <p>La tercera dosis no solo te protege de adquirir la COVID-19, sino que además evita que hagas un caso grave de la enfermedad o que fallezcas. Por eso, no temas aplicarte la dosis de refuerzo, ya que además, ha demostrado ser segura y tolerable.
+            </p>
+
+
         </div>
 
     </div>
     <div class="cuadro-main">
         <div class="cuadro-text">
-            <img src="/img/img2.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <img src="/img/primero.png" alt="">
+
+        </div>
+        <div class="cuadro-text">
+            <img src="/img/segundo.png" alt="">
+
+        </div>
+        <div class="cuadro-text">
+            <img src="/img/cuarto.png" alt="">
+
         </div>
         <div class="cuadro-text">
             <img src="/img/img2.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-        </div>
-        <div class="cuadro-text">
-            <img src="/img/img2.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-        </div>
-        <div class="cuadro-text">
-            <img src="/img/img2.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
         </div>
     </div>
 
@@ -541,7 +569,7 @@
                 <h2>Redes Sociales</h2>
 
                 <a href="# ">
-                    <ion-icon name="logo-facebook "></ion-icon>Facebook</a>
+                    <ion-icon name="logo-facebook"></ion-icon>Facebook</a>
                 <a href="# ">
                     <ion-icon name="logo-twitter "></ion-icon>Twitter</a>
                 <a href="# ">
@@ -558,6 +586,7 @@
             <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
         </div>
     </footer>
+
     <script>
         const nav = document.querySelector('.nav');
 
@@ -565,6 +594,8 @@
             nav.classList.toggle('active', window.scrollY > 0)
         })
     </script>
+
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
