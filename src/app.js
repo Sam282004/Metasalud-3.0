@@ -60,6 +60,10 @@ app.get('/registro_pacientes', (req, res) => {
 
     res.render("registro_pacientes");
 })
+app.get('/dosis', (req, res) => {
+
+    res.render("dosis");
+})
 
 
 

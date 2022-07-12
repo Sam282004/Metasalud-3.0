@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Dosis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .header {
+            background-color: #2196F3;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.5s ease;
+        }
+        
+        .nav a img {
+            height: 100px;
+            margin-top: 25px;
+            margin-left: 45px;
+            margin-bottom: 25px;
+            border-radius: 45px;
+            background-color: white;
+        }
+        
+        .ul-menu {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            display: flex;
+        }
+        
+        .ul-menu li {
+            margin: auto;
+            list-style: none;
+            font-size: 22px;
+            transition: all 0.25s;
+        }
+        
+        .ul-menu li a {
+            background-color: #369BF5;
+            color: white;
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+            transition: all 0.8s ease;
+        }
+        
+        .nav.active .ul-menu li a {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+            border: solid 1px rgb(0, 0, 0);
+        }
+        
+        .ul-menu li a:hover {
+            border: solid 1px white;
+            background-color: white;
+            color: black;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active .ul-menu li a:hover {
+            border: solid 1px rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active {
+            background: #ffffff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        
+        .ul-menu li:hover {
+            transform: translateY(-15px);
+        }
+        
+        .container-vector {
+            background-color: #2196F3;
+            padding-top: 190px;
+            justify-content: space-between;
+            display: flex;
+        }
+        
+        .container-text {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            padding: 15px;
+            margin-left: 10%;
+            margin-top: 2%;
+        }
+        
+        .container-text h1 {
+            font-size: 55px;
+            font-weight: 900;
+            color: white;
+            line-height: 0.9;
+        }
+        
+        .container-text p {
+            margin-top: 35px;
+            font-size: 25px;
+            color: white;
+            line-height: 1;
+        }
+        
+        .img-vector {
+            height: 600px;
+        }
+        
+        .container-button {
+            margin-top: 25px;
+            padding: 10px;
+            width: 200px;
+            background-color: #FEBA0B;
+            border: solid 1px #FEBA0B;
+            border-radius: 30px;
+            transition: all 0.25s;
+        }
+        
+        .container-button:hover {
+            border: 1px solid white;
+            transform: translateY(-15px);
+        }
+        
+        .container-button a {
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .asdasd {
+            font-family: 'Poppins', sans-serif;
+            max-width: 400px;
+            font-size: 60px;
+            font-weight: 900;
+        }
+        /*Wave*/
+        
+        .wave-main {
+            overflow: hidden;
+        }
+        
+        .wave-1 {
+            width: 300%;
+            height: 100%;
+            padding-top: 120px;
+            background-position: bottom;
+            background-image: url(/img/wave.png);
+            animation: o 7s linear infinite;
+        }
+        
+        @keyframes o {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: -1396px;
+            }
+        }
+        /*tarjeta*/
+        
+        .padre-class {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            width: 100%;
+            margin-top: 5%;
+            padding: 5px;
+            display: flex;
+            background-color: #2196F3;
+            justify-content: space-evenly;
+        }
+        
+        .tarjeta {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin: 50px 0px 50px 0px;
+            padding: 15px;
+            background-color: white;
+            width: 450px;
+            transition: all 0.25s;
+            border-radius: 45px;
+        }
+        
+        .tarjeta:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+        
+        .tarjeta img {
+            height: 290px;
+            padding: 5px;
+        }
+        
+        .tarjeta p {
+            text-align: justify;
+            padding: 15px;
+            font-size: 17px;
+            margin: 15px;
+        }
+        
+        .tarjeta button {
+            border-radius: 45px;
+            font-size: 25px;
+            padding: 5px;
+            width: 200px;
+            margin: 10px 0px 10px 0px;
+            background-color: #FEBA0B;
+        }
+        
+        .tarjeta button:hover {
+            opacity: 0.9;
+        }
+        /*card*/
+        
+        .card-main {
+            margin-top: 100px;
+            padding: 55px;
+            background-color: #E6E6E6;
+            margin-bottom: 100px;
+        }
+        
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-container img {
+            border-radius: 45px;
+            padding: 10px;
+            width: 60%;
+            margin-left: 3%;
+            margin-right: 2%;
+        }
+        
+        .card-text {
+            border-radius: 45px;
+            background-color: #2196F3;
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 45px;
+            margin: 10px;
+            text-align: justify;
+            font-size: 25px;
+        }
+        
+        .card-text p {
+            margin: 20px 0px 20px 0px;
+            line-height: 1.2;
+        }
+        
+        .card-button {
+            margin: 70px 40px 70px 0px;
+            text-align: end;
+        }
+        
+        .card-text button {
+            width: 250px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            height: 65px;
+            border-radius: 45px;
+            background-color: #FEBA0B;
+            font-weight: 600;
+            transition: all 0.25s;
+            font-size: 30px;
+        }
+        
+        .card-text button:hover {
+            opacity: 0.8;
+        }
+        
+        .cuadro-main {
+            height: 300px;
+            margin: 100px 0px 10px 0px;
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: white;
+            justify-content: space-between;
+        }
+        
+        .cuadro-main img {
+            height: 150px;
+            margin-left: 22%;
+        }
+        
+        .cuadro-text {
+            margin: 30px;
+            padding: 10px;
+        }
+        
+        .cuadro-text p {
+            font-size: 20px;
+            text-align: justify;
+            padding: 15px;
+            line-height: 1;
+        }
+        /*footer*/
+        
+        footer {
+            width: 100%;
+            background-size: cover;
+            color: white !important;
+            background-color: #2196F3;
+        }
+        
+        .container__footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1500px;
+            margin: auto;
+        }
+        
+        .box__footer {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .box__footer .logo img {
+            border-radius: 45px;
+            width: 250px;
+        }
+        
+        .box__footer .terms {
+            max-width: 350px;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .box__footer h2 {
+            margin-bottom: 30px;
+            border-bottom: 1px solid white;
+            font-weight: 700;
+        }
+        
+        .box__footer a {
+            display: flex;
+            margin-top: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .box__footer a:hover {
+            opacity: 0.8;
+        }
+        
+        .box__footer a .fab {
+            font-size: 20px;
+        }
+        
+        .box__copyright {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 0px 40px;
+        }
+        
+        .box__copyright p {
+            margin-top: 20px;
+        }
+        
+        .box__copyright hr {
+            width: 100%;
+            height: 1px;
+        }
+        
+        ion-icon {
+            margin-right: 3px;
+            font-size: 34px;
+        }
+        
+        .wave-main2 {
+            padding-top: 184px;
+            overflow: hidden;
+            padding-bottom: 0%;
+            height: 300px;
+        }
+        
+        .wave-2 {
+            width: 300%;
+            padding-top: 180px;
+            background-image: url(/img/wave2.png);
+            animation: o 7s linear infinite;
+        }
+        
+        @keyframes a {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: 1396px;
+            }
+        }
+        
+        body {
+            max-width: 100%;
+        }
+        
+        .tittle {
+            padding-top: 100px;
+            text-align: center;
+            font-size: 32px;
+        }
+        
+        .cuadros {
+            max-width: 600px;
+            padding-left: 200px;
+            padding-bottom: 100px;
+            padding-top: 50px;
+            min-width: 600px;
+        }
+        
+        .Edad {
+            max-width: 600px;
+            padding-left: 200px;
+            padding-bottom: 100px;
+            padding-top: 50px;
+            min-width: 600px;
+        }
+        
+        .vacunas {
+            max-width: 600px;
+            padding-left: 200px;
+            padding-bottom: 100px;
+            padding-top: 50px;
+            min-width: 600px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .container .cuadros c {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            padding-bottom: 0px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            font-weight: 700;
+            padding-right: 235px;
+            border-style: solid;
+        }
+        
+        .container .cuadros d {
+            font-size: 18px;
+        }
+        
+        .container .Edad d {
+            font-size: 18px;
+        }
+        
+        .container .vacunas d {
+            font-size: 18px;
+        }
+        
+        .container .Edad c {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            padding-bottom: 0px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            font-weight: 700;
+            padding-right: 290px;
+            border-style: solid;
+        }
+        
+        .container .vacunas c {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            padding-bottom: 0px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            font-weight: 700;
+            padding-right: 250px;
+            border-style: solid;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+
+        <nav class="nav" id="nav-menu">
+            <a href="/index"><img src="/img/logo.png" alt="#"></a>
+            <ul class="ul-menu">
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/registro_pacientes">Registrar Pacientes</a></li>
+                <li><a href="/tabla_pacientes">Consultar Pacientes</a></li>
+                <li><a href="/sobre-nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wave-main">
+        <img class="wave-1" alt="">
+    </div>
+
+
+    <div class="tittle">
+        <h1>Lo necesario</h1>
+    </div>
+    <div class="container">
+        <div class="cuadros">
+            <div>
+                <c>1ra dosis</c>
+                <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+            </div>
+
+
+        </div>
+        <div class="Edad">
+            <c>Edad</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="vacunas">
+            <c>Vacunas</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="cuadros">
+            <c>2da dosis</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="Edad">
+            <c>Edad</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="vacunas">
+            <c>Vacunas</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="cuadros">
+            <c>3ra dosis</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+
+        <div class="Edad">
+            <c>Edad</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="vacunas">
+            <c>Vacunas</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="cuadros">
+            <c>4ta dosis</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="Edad">
+            <c>Edad </c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+        <div class="vacunas">
+            <c>Vacunas</c>
+            <d>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, optio! Libero necessitatibus consequatur aliquid cupiditate odio quidem incidunt ipsam praesentium earum ad, facilis debitis, excepturi possimus maiores quasi delectus voluptatibus.</d>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="wave-main2">
+        <img class="wave-2" alt="">
+    </div>
+    <footer>
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="/img/logo.png" alt=" ">
+                </div>
+                <div class="terms ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente
+                        deserunt.
+                    </p>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Soluciones</h2>
+
+                <a href="# ">Vacunacion</a>
+                <a href="# ">Sobre Nosotros</a>
+                <a href="# ">Soporte</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="# ">Acerca de</a>
+                <a href="# ">Trabajos</a>
+                <a href="# ">Procesos</a>
+                <a href="# ">Servicios</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+
+                <a href="# ">
+                    <ion-icon name="logo-facebook "></ion-icon>Facebook</a>
+                <a href="# ">
+                    <ion-icon name="logo-twitter "></ion-icon>Twitter</a>
+                <a href="# ">
+                    <ion-icon name="logo-linkedin "></ion-icon>Linkedin</a>
+                <a href="# ">
+                    <ion-icon name="logo-instagram "></ion-icon>
+                    </i>Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
+        </div>
+    </footer>
+    <script>
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('active', window.scrollY > 0)
+        })
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+
+</html>
