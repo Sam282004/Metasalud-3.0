@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Pacientes</title>
+    <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
+    <link href="https://css.gg/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .header {
+        background-color: #2196F3;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.5s ease;
+    }
+    
+    .nav a img {
+        height: 100px;
+        margin-top: 25px;
+        margin-left: 45px;
+        margin-bottom: 25px;
+        border-radius: 45px;
+        background-color: white;
+    }
+    
+    .ul-menu {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        display: flex;
+    }
+    
+    .ul-menu li {
+        margin: auto;
+        list-style: none;
+        font-size: 22px;
+        transition: all 0.25s;
+    }
+    
+    .ul-menu li a {
+        background-color: #369BF5;
+        color: white;
+        padding: 17px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+        transition: all 0.8s ease;
+    }
+    
+    .nav.active .ul-menu li a {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 17px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+        border: solid 1px rgb(0, 0, 0);
+    }
+    
+    .ul-menu li a:hover {
+        border: solid 1px white;
+        background-color: white;
+        color: black;
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+    }
+    
+    .nav.active .ul-menu li a:hover {
+        border: solid 1px rgb(0, 0, 0);
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+    }
+    
+    .nav.active {
+        background: #ffffff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    
+    .ul-menu li:hover {
+        transform: translateY(-15px);
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    table,
+    td {
+        border-collapse: collapse;
+        padding: 20px 45px;
+    }
+    
+    .ancho {
+        padding: 100px 25px;
+    }
+    
+    th {
+        font-size: 18px;
+        font-family: "Work Sans", sans-serif;
+        border-left: 1px solid rgba(0, 0, 0, 0.205);
+        border-right: 1px solid rgba(0, 0, 0, 0.205);
+        border-top: 1px solid rgba(0, 0, 0, 0.205);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+        background-color: #2196f3;
+        padding: 18px;
+        color: white;
+        font-weight: 800;
+    }
+    
+    .Title-1 {
+        font-family: "Koulen", cursive;
+        padding: 34px;
+        text-align: center;
+        color: #01467e;
+        font-size: 45px;
+    }
+    
+    tr {
+        border-radius: 12px;
+    }
+    
+    td {
+        border-top: 1px solid rgba(0, 0, 0, 0.205);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+        font-family: "Kantumruy Pro", sans-serif;
+        text-align: center;
+    }
+    
+    td {
+        padding: 15px 9px !important;
+    }
+    
+    .eliminar {
+        border-top: 1px solid rgba(0, 0, 0, 0.205);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+        background-color: #2196f3;
+    }
+    
+    .eliminar-2 {
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.205);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+        background-color: white;
+    }
+    
+    .button-color {
+        font-family: "Work Sans", sans-serif;
+        font-weight: 900;
+        font-size: 17px;
+        color: antiquewhite;
+        padding: 9px 8px;
+        background-color: #2196F3;
+        border: solid 1px #2196F3;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    
+    .button-color:hover {
+        opacity: 0.6;
+    }
+    
+    .correo-elec {
+        border-right: 1px solid #2196f3 !important;
+    }
+    
+    .asd {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    /*footer*/
+    /*Wave*/
+    
+    .wave-main {
+        overflow: hidden;
+    }
+    
+    .wave-1 {
+        width: 300%;
+        height: 100%;
+        padding-top: 120px;
+        background-position: bottom;
+        background-image: url(/img/wave.png);
+        animation: o 7s linear infinite;
+    }
+    
+    @keyframes o {
+        0% {
+            margin-left: 0;
+        }
+        100% {
+            margin-left: -1396px;
+        }
+    }
+    
+    footer {
+        width: 100%;
+        background-size: cover;
+        color: white !important;
+        background-color: #2196F3;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .container__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1500px;
+        margin: auto;
+    }
+    
+    .box__footer {
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+    
+    .box__footer .logo img {
+        border-radius: 45px;
+        width: 250px;
+    }
+    
+    .box__footer .terms {
+        max-width: 350px;
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    
+    .box__footer h2 {
+        margin-bottom: 30px;
+        border-bottom: 1px solid white;
+        font-weight: 700;
+    }
+    
+    .box__footer a {
+        display: flex;
+        margin-top: 10px;
+        font-weight: 600;
+        color: white;
+    }
+    
+    .box__footer a:hover {
+        opacity: 0.8;
+    }
+    
+    .box__footer a .fab {
+        font-size: 20px;
+    }
+    
+    .box__copyright {
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+        padding: 0px 40px;
+    }
+    
+    .box__copyright p {
+        margin-top: 20px;
+    }
+    
+    .box__copyright hr {
+        width: 100%;
+        height: 1px;
+    }
+    
+    ion-icon {
+        padding-right: 2px !important;
+        font-size: 24px !important;
+    }
+    
+    .wave-main2 {
+        padding-top: 184px;
+        overflow: hidden;
+        padding-bottom: 0%;
+        height: 300px;
+    }
+    
+    .wave-2 {
+        width: 300%;
+        padding-top: 180px;
+        background-image: url(/img/wave2.png);
+        animation: o 7s linear infinite;
+    }
+    
+    @keyframes a {
+        0% {
+            margin-left: 0;
+        }
+        100% {
+            margin-left: 1396px;
+        }
+    }
+    
+    .centrado-1 {
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <header class="header">
+
+        <nav class="nav" id="nav-menu">
+            <a href="/index"><img src="/img/logo.png" alt="#"></a>
+            <ul class="ul-menu">
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/registro_pacientes">Registrar Pacientes</a></li>
+                <li><a href="/tabla_pacientes">Consultar Pacientes</a></li>
+                <li><a href="/sobre-nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="Title-1">HISTORIAL DE REGISTROS</h1>
+    <div class="ancho">
+        <div class="asd">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dni</th>
+                        <th>Edad</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Sexo</th>
+                        <th>Peso</th>
+                        <th>Estatura</th>
+                        <th>Telefono</th>
+                        <th>Dirección</th>
+                        <th class="correo-elec">Correo Electronico</th>
+                        <th class="eliminar">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%= (i + 1) %>
+                                </td>
+                                <td>
+                                    <%= data[i].nombre%>
+                                </td>
+                                <td>
+                                    <%= data[i].apellido%>
+                                </td>
+                                <td>
+                                    <%= data[i].dni%>
+                                </td>
+                                <td>
+                                    <%= data[i].edad%>
+                                </td>
+                                <td>
+                                    <%= data[i].nacimiento.toLocaleDateString()%>
+                                </td>
+                                <td>
+                                    <%= data[i].sexo%>
+                                </td>
+                                <td>
+                                    <%= data[i].peso%>
+                                </td>
+                                <td>
+                                    <%= data[i].altura%>
+                                </td>
+                                <td>
+                                    <%= data[i].telefono%>
+                                </td>
+                                <td>
+                                    <%= data[i].direccion%>
+                                </td>
+                                <td>
+                                    <%= data[i].correo%>
+                                </td>
+                                <td class="eliminar-2">
+                                    <a class="button-color" href="/delete/<%= data[i].id%>" class="">Eliminar</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="wave-main2">
+        <img class="wave-2" alt="">
+    </div>
+    <footer>
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="/img/logo.png" alt=" ">
+                </div>
+                <div class="terms ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente
+                        deserunt.
+                    </p>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Soluciones</h2>
+
+
+                <a href="# ">Ingresar Datos</a>
+                <a href="# ">Sobre Nosotros</a>
+                <a href="# ">Soporte</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="# ">Acerca de</a>
+                <a href="# ">Trabajos</a>
+                <a href="# ">Procesos</a>
+                <a href="# ">Servicios</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+
+                <a href="# ">
+                    <ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+                <a href="# ">
+                    <ion-icon name="logo-twitter"></ion-icon> Twitter</a>
+                <a href="# ">
+                    <ion-icon name="logo-linkedin"></ion-icon> Linkedin</a>
+                <a href="# ">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    </i> Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('active', window.scrollY > 0)
+        })
+    </script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

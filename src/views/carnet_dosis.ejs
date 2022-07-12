@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/099f9f95a0.js" crossorigin="anonymous"></script>
+    <title>Carnet</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        /*nav*/
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .header {
+            background-color: #2196F3;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.5s ease;
+        }
+        
+        .nav a img {
+            height: 100px;
+            margin-top: 25px;
+            margin-left: 45px;
+            margin-bottom: 25px;
+            border-radius: 45px;
+            background-color: white;
+        }
+        
+        .ul-menu {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            display: flex;
+        }
+        
+        .ul-menu li {
+            margin: auto;
+            list-style: none;
+            font-size: 22px;
+            transition: all 0.25s;
+        }
+        
+        .ul-menu li a {
+            background-color: #369BF5;
+            color: white;
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+            transition: all 0.8s ease;
+        }
+        
+        .nav.active .ul-menu li a {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 17px;
+            border-radius: 30px;
+            margin: 0px 10px 0px 10px;
+            border: solid 1px rgb(0, 0, 0);
+        }
+        
+        .ul-menu li a:hover {
+            border: solid 1px white;
+            background-color: white;
+            color: black;
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active .ul-menu li a:hover {
+            border: solid 1px rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+        }
+        
+        .nav.active {
+            background: #ffffff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        
+        .ul-menu li:hover {
+            transform: translateY(-15px);
+        }
+        
+        .centrado-img {
+            display: block;
+            margin: 0px auto;
+            margin-bottom: 100px;
+        }
+        
+        .Titles {
+            color: rgb(59, 141, 173);
+            font-size: 23px;
+            margin: 0px 410px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+        }
+        
+        .Titles-2 {
+            color: rgb(59, 141, 173);
+            font-size: 23px;
+            text-align: end;
+            margin: 25px 410px 0px 0px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+        }
+        
+        .space {
+            margin: 12px 410px;
+        }
+        
+        .linear {
+            border: 3px solid rgb(45, 95, 117);
+            border-radius: 7px;
+            display: flex;
+            max-width: 100%;
+        }
+        
+        .img-cliente {
+            width: 220px;
+        }
+        
+        .bloque-1 {
+            display: block;
+            margin: 12px 40px;
+        }
+        
+        .bloque-2 {
+            font-family: 'Poppins', sans-serif;
+            margin: auto 0px;
+            font-weight: 600;
+        }
+        
+        .space .bloque-2 p {
+            padding: 12px;
+        }
+        
+        .linear-2 {
+            border: 3px solid rgb(45, 95, 117);
+            border-radius: 7px;
+            display: block;
+            max-width: 100%;
+        }
+        
+        .Titles-3 {
+            color: rgb(59, 141, 173);
+            font-size: 23px;
+            margin: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+        }
+        
+        .CodigoQR {
+            text-align: end;
+            padding-right: 12px;
+        }
+        
+        .button-color {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 900;
+            font-size: 23px;
+            color: antiquewhite;
+            padding: 12px 90px;
+            background-color: #32788dfb;
+            border: solid 1px #32788dfb;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        
+        .linear-3 {
+            border: 2px solid rgb(124, 153, 165);
+            border-radius: 7px;
+            display: block;
+            max-width: 100%;
+        }
+        
+        .dosis-1 {
+            color: rgb(53, 53, 53);
+            border-radius: 6px;
+            margin: 20px auto 0px 0px;
+            background-color: rgba(127, 255, 212, 0.418);
+            border-bottom: 1px solid #6b7b80fb;
+        }
+        
+        .dosis-2 {
+            color: rgb(53, 53, 53);
+            border-radius: 6px;
+            margin: 0px auto 19px 0px;
+            background-color: rgba(127, 255, 212, 0.418);
+            border-top: 1px solid #6b7b80fb;
+        }
+        
+        .contenidodosis {
+            font-family: 'PT Sans', sans-serif;
+            font-weight: 900;
+            margin-left: 24px;
+        }
+        
+        .bloque-3 {
+            margin: auto 6%;
+        }
+        
+        .space .bloque-3 p {
+            padding: 12px;
+        }
+        
+        .icon-tamaño {
+            font-size: 28px;
+        }
+        /*footer*/
+        
+        footer {
+            width: 100%;
+            background-size: cover;
+            color: white !important;
+            background-color: #2196F3;
+        }
+        
+        .container__footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1500px;
+            margin: auto;
+        }
+        
+        .box__footer {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        
+        .box__footer .logo img {
+            border-radius: 45px;
+            width: 250px;
+        }
+        
+        .box__footer .terms {
+            max-width: 350px;
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        
+        .box__footer h2 {
+            margin-bottom: 30px;
+            border-bottom: 1px solid white;
+            font-weight: 700;
+        }
+        
+        .box__footer a {
+            display: flex;
+            margin-top: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .box__footer a:hover {
+            opacity: 0.8;
+        }
+        
+        .box__footer a .fab {
+            font-size: 20px;
+        }
+        
+        .box__copyright {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 0px 40px;
+        }
+        
+        .box__copyright p {
+            margin-top: 20px;
+        }
+        
+        .box__copyright hr {
+            width: 100%;
+            height: 1px;
+        }
+        
+        ion-icon {
+            padding-right: 2px !important;
+            font-size: 24px !important;
+        }
+        
+        .wave-main2 {
+            padding-top: 184px;
+            overflow: hidden;
+            padding-bottom: 0%;
+            height: 300px;
+        }
+        
+        .wave-2 {
+            width: 300%;
+            padding-top: 180px;
+            background-image: url(/img/wave2.png);
+            animation: o 7s linear infinite;
+        }
+        
+        @keyframes a {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: 1396px;
+            }
+        }
+        
+        .centrado-1 {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+
+        <nav class="nav" id="nav-menu">
+            <a href="/index"><img src="/img/logo.png" alt="#"></a>
+            <ul class="ul-menu">
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/usuarios">Ingresar Datos</a></li>
+                <li><a href="/consulta">Consultar</a></li>
+                <li><a href="/sobre-nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="centrado-img" src="/img/logo2.png" alt="">
+    <p class="Titles">
+        <ion-icon name="book-outline"></ion-icon> Carnet de Vacunacion</p>
+    <div class="space">
+        <div class="linear">
+            <div class="bloque-1">
+                <img class="img-cliente" src="/img/user.png" alt="">
+            </div>
+            <div class="bloque-2">
+
+
+                <p> <b>Nombre:</b>
+                    <%= data[0].name%>
+                </p>
+                <hr style="width: 600px">
+                <p> <b> Apellidos:</b>
+                    <%= data[0].lastname %>
+                </p>
+                <hr style="width: 600px">
+                <p> <b>Dni:</b>
+                    <%= data[0].dni%>
+                </p>
+                <hr style="width: 600px">
+                <p> <b>Fecha de emision del DNI:</b>
+                    <%=  data[0].fEmision.toLocaleDateString() %>
+                </p>
+                <hr style="width: 600px">
+                <p> <b>Fecha de Nacimiento:</b>
+                    <%= data[0].fNacimiento.toLocaleDateString()%>
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <p class="Titles-2">Carnet de Vacunacion
+        <ion-icon class="icon-tamaño" name="reader-outline"></ion-icon>
+    </p>
+    <div class="space">
+        <div class="linear-3">
+            <div class="">
+                <p class="Titles-3">
+                    <ion-icon name="sunny-outline"></ion-icon> Vacuna contra el Covid-19</p>
+                <div style="text-align: end;margin-right: 12px;">
+                    <a class="button-color" href="#">
+                        <ion-icon name="qr-code-outline"></ion-icon> CODIGO QR</a>
+                </div>
+            </div>
+            <div class="bloque-3">
+                <div class="dosis-1">
+                    <p style="font-size: 15px;font-family: 'Nunito', sans-serif;font-weight: 600;">
+                        <ion-icon name="add-circle-outline"></ion-icon> 2° Dosis</p>
+                    <div>
+                        <p class="contenidodosis">
+                            <ion-icon name="shield-half-outline"></ion-icon> Sabado 17 de Jul del 2021</p>
+                        <p class="contenidodosis">
+                            <ion-icon name="location-outline"></ion-icon> LIMA-NORTE - Gran Unidad Escolar Jose Gracia -LIMA LIMA SAN MARTIN DE PORRES</p>
+                    </div>
+                </div>
+                <div class="dosis-2">
+                    <p style="font-size: 15px;font-family: 'Nunito', sans-serif;font-weight: 600;">
+                        <ion-icon name="add-circle-outline"></ion-icon> 1° Dosis</p>
+                    <div>
+                        <p class="contenidodosis">
+                            <ion-icon name="shield-half-outline"></ion-icon> Sabado 26 de Jun del 2021</p>
+                        <p class="contenidodosis">
+                            <ion-icon name="location-outline"></ion-icon> LIMA-NORTE - Gran Unidad Escolar Jose Granda -LIMA LIMA SAN MARTIN DE PORRES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-main2">
+        <img class="wave-2" alt="">
+    </div>
+    <footer>
+        <div class="container__footer">
+            <div class="box__footer">
+                <div class="logo">
+                    <img src="/img/logo.png" alt=" ">
+                </div>
+                <div class="terms ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente
+                        deserunt.
+                    </p>
+                </div>
+            </div>
+            <div class="box__footer">
+                <h2>Soluciones</h2>
+
+                <a href="# ">Ingresar Datos</a>
+                <a href="# ">Sobre Nosotros</a>
+                <a href="# ">Soporte</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Compañia</h2>
+                <a href="# ">Acerca de</a>
+                <a href="# ">Trabajos</a>
+                <a href="# ">Procesos</a>
+                <a href="# ">Servicios</a>
+            </div>
+
+            <div class="box__footer">
+                <h2>Redes Sociales</h2>
+
+
+                <a href="# ">
+                    <ion-icon name="logo-facebook"></ion-icon> Facebook</a>
+                <a href="# ">
+                    <ion-icon name="logo-twitter"></ion-icon> Twitter</a>
+                <a href="# ">
+                    <ion-icon name="logo-linkedin"></ion-icon> Linkedin</a>
+                <a href="# ">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    </i> Instagram</a>
+            </div>
+
+        </div>
+
+        <div class="box__copyright">
+            <hr>
+            <p>Todos los derechos reservados © 2021 <b>MetaSalud</b></p>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('active', window.scrollY > 0)
+        })
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
